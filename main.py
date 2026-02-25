@@ -11,7 +11,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 
 load_dotenv()
 TELEGRAM_API_KEY = os.getenv("TELEGRAM_API_KEY")
-LLM_API_KEY = os.getenv("GROQ_API_KEY")
+LLM_API_KEY = os.getenv("LLM_API_KEY")
 MODEL = "qwen/qwen3-32b"
 LLM_BASE_URL = "https://api.groq.com/openai/v1"
 DB_FILE = "bot.db"
