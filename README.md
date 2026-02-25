@@ -2,8 +2,8 @@
 
 A blazingly fast asynchronous Telegram chatbot powered by any openai compatible llm api (by default uses groqai)
 
-**Try it yourself: t.me/erikuustalu_telellm_bot**
-
+**Try it yourself:** t.me/erikuustalu_telellm_bot (Currently not working)
+ 
 ## Features
 * **Presistent memory** Saves the last 10 chat messages per user, allowing for continuous conversations
 * **Built-in rate limiting** Allows setting a daily per user token limit
