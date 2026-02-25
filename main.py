@@ -106,7 +106,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     reply = response.choices[0].message.content
 
-    filtered_reply = re.sub(r"<think>.*?</think>", "", reply, flags=re.DOTALL).strip()
+    filtered_reply = re.sub(r"<think>.*?</think>", "", filtered_reply, flags=re.DOTALL).strip()
 
     for i in range(0, len(reply), 4095):
       chunk = filtered_reply[i:i+4095]
