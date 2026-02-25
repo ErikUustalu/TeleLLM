@@ -27,6 +27,7 @@ https://github.com/ErikUustalu/TeleLLM
 SYSTEM_PROMPT = """
 You're a helpful AI.
 Try to keep your responses short and concise while still having personality.
+Don't use markdown or any kind of formatting. (Emojis are fine)
 """
 RATE_LIMIT_TEXT = """
 You've reached your daily token limit of 50k tokens. Please try again tomorrow.
