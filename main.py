@@ -4,6 +4,7 @@ import logging
 import aiosqlite
 import datetime
 import re
+import telegramify_markdown
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from telegram import Update
@@ -27,7 +28,6 @@ https://github.com/ErikUustalu/TeleLLM
 SYSTEM_PROMPT = """
 You're a helpful AI.
 Try to keep your responses short and concise while still having personality.
-Don't use markdown or any kind of formatting. (Emojis are fine)
 """
 RATE_LIMIT_TEXT = """
 You've reached your daily token limit of 50k tokens. Please try again tomorrow.
@@ -107,10 +107,12 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply = response.choices[0].message.content
 
     filtered_reply = re.sub(r"<think>.*?</think>", "", reply, flags=re.DOTALL).strip()
+    filtered_reply.replace("**", "")
 
     for i in range(0, len(reply), 4095):
       chunk = filtered_reply[i:i+4095]
-      await context.bot.send_message(chat_id=update.effective_chat.id, text=chunk)
+      safe_chunk = telegramify_markdown.markdownify(chunk)
+      await context.bot.send_message(chat_id=update.effective_chat.id, text=safe_chunk, parse_mode="MarkdownV2")
 
     await add_to_history(update.effective_user.id, "assistant", reply)
     await update_tokens(update.effective_user.id, response.usage.total_tokens)
