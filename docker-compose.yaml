@@ -1,0 +1,9 @@
+services:
+  telellm:
+    image: ghcr.io/erikuustalu/telellm:latest
+    container_name: telellm-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./bot.db:/app/bot.db
