@@ -12,7 +12,7 @@ A blazingly fast asynchronous Telegram chatbot powered by any openai compatible 
 
 ## Setup
 
-## CLI
+### CLI
 
 **Prerequisities:** Python (3.14 tested)
 
@@ -26,7 +26,7 @@ A blazingly fast asynchronous Telegram chatbot powered by any openai compatible 
    * `python bot.py`
    * The SQLite database bot.db will be automatically created
 
-## Docker compose
+### Docker compose
 
 **Prerequisities:** Docker
 
