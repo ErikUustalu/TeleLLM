@@ -17,14 +17,14 @@ A blazingly fast asynchronous Telegram chatbot powered by any openai compatible 
 **Prerequisities:** Python (3.14 tested)
 
 1. **Clone this repository**
-   `git clone https://github.com/ErikUustalu/TeleLLM.git`
+   * `git clone https://github.com/ErikUustalu/TeleLLM.git`
 2. **Install dependencies**
-   `pip install -r requirements.txt`
+   * `pip install -r requirements.txt`
 3. **Configure enviorment variables**
-   Rename .env.example to .env and add your api keys
+   * Rename .env.example to .env and add your api keys
 4. **Run the bot**
-   `python bot.py`
-   The SQLite database bot.db will be automatically created
+   * `python bot.py`
+   * The SQLite database bot.db will be automatically created
 
 ## Docker compose
 
