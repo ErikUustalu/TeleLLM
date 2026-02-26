@@ -107,9 +107,8 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply = response.choices[0].message.content
 
     filtered_reply = re.sub(r"<think>.*?</think>", "", reply, flags=re.DOTALL).strip()
-    filtered_reply.replace("**", "")
 
-    for i in range(0, len(reply), 4095):
+    for i in range(0, len(filtered_reply), 4095):
       chunk = filtered_reply[i:i+4095]
       safe_chunk = telegramify_markdown.markdownify(chunk)
       await context.bot.send_message(chat_id=update.effective_chat.id, text=safe_chunk, parse_mode="MarkdownV2")
