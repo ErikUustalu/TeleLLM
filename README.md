@@ -34,9 +34,9 @@ A blazingly fast asynchronous Telegram chatbot powered by any openai compatible 
     * `nano .env`
     * Paste in the contents of [.env.example](https://github.com/ErikUustalu/TeleLLM/blob/main/.env.example) and modify them with your information
 2.  **Create the database file**
-    `touch bot.db`
+    * `touch bot.db`
 3.  **Create the docker compose file**
-    `nano docker-compose.yml`
-    Paste in the [docker-compose.yaml](https://github.com/ErikUustalu/TeleLLM/blob/main/docker-compose.yaml)
+    * `nano docker-compose.yml`
+    * Paste in the [docker-compose.yaml](https://github.com/ErikUustalu/TeleLLM/blob/main/docker-compose.yaml)
 4.  **Start the bot**
-    `docker compose up -d`
+    * `docker compose up -d`
