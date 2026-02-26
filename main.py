@@ -13,25 +13,15 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 load_dotenv()
 TELEGRAM_API_KEY = os.getenv("TELEGRAM_API_KEY")
 LLM_API_KEY = os.getenv("LLM_API_KEY")
-MODEL = "qwen/qwen3-32b"
-LLM_BASE_URL = "https://api.groq.com/openai/v1"
-DB_FILE = "bot.db"
-TPD = 50000
-CHAT_HISTORY_LIMIT = 10
+MODEL = os.getenv("MODEL")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL")
+DB_FILE = os.getenv("DB_FILE")
+TPD = int(os.getenv("TPD"))
+CHAT_HISTORY_LIMIT = int(os.getenv("CHAT_HISTORY_LIMIT"))
 
-WELCOME_TEXT = """
-Thanks for being interested in TeleLLM!
-This is a simple demo that uses a weaker AI model and is rate limited to 50k tokens per day.
-For maximum performance, host the bot yourself. (it's free!)
-https://github.com/ErikUustalu/TeleLLM
-"""
-SYSTEM_PROMPT = """
-You're a helpful AI.
-Try to keep your responses short and concise while still having personality.
-"""
-RATE_LIMIT_TEXT = """
-You've reached your daily token limit of 50k tokens. Please try again tomorrow.
-"""
+WELCOME_TEXT = os.getenv("WELCOME_TEXT")
+SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT")
+RATE_LIMIT_TEXT = os.getenv("RATE_LIMIT_TEXT")
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
