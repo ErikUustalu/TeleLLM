@@ -36,7 +36,7 @@ Python Telegram chatbot powered by any openai compatible llm api (by default use
     * `docker compose up -d`
 
 ## Built with
-- python 3.12 (probably works on other versions too)
+- python 3.14 (probably works on other versions too)
 - python-telegram-bot and aiosqlite
 
 ## License
